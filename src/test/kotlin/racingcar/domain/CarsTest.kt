@@ -27,8 +27,8 @@ internal class CarsTest {
     @Test
     fun `가장 멀리간 우승자를 리턴한다`() {
         // given
-        val car1 = Car(Name("a"), Position(1))
-        val car2 = Car(Name("b"), Position(3))
+        val car1 = Car(Name("a"), Position.valueOf(1))
+        val car2 = Car(Name("b"), Position.valueOf(3))
         val givenCars = Cars(listOf(car1, car2))
 
         // when
@@ -41,9 +41,9 @@ internal class CarsTest {
     @Test
     fun `우승자가 두대 이상인 경우의 우승자 목록을 리턴한다`() {
         // given
-        val car1 = Car(Name("a"), Position(1))
-        val car2 = Car(Name("b"), Position(3))
-        val car3 = Car(Name("c"), Position(3))
+        val car1 = Car(Name("a"), Position.valueOf(1))
+        val car2 = Car(Name("b"), Position.valueOf(3))
+        val car3 = Car(Name("c"), Position.valueOf(3))
         val givenCars = Cars(listOf(car1, car2, car3))
 
         // when

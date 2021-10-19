@@ -5,7 +5,7 @@ package racingcar.domain
  */
 data class Car(
     val name: Name,
-    val position: Position = Position(0),
+    val position: Position = Position.valueOf(0),
     private val movingStrategy: MovingStrategy = RandomMoveStrategy()
 ) {
 

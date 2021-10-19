@@ -3,7 +3,7 @@ package racingcar.domain
 import kotlin.math.max
 
 @JvmInline
-value class Position(val value: Int = 0) {
+value class Position private constructor(val value: Int) {
     init {
         require(value >= 0)
     }
@@ -18,5 +18,14 @@ value class Position(val value: Int = 0) {
 
     fun isMaxPosition(maxPosition: Int): Boolean {
         return value == maxPosition
+    }
+
+    companion object {
+        private val ZERO = Position(value = 0)
+
+        fun valueOf(value: Int): Position {
+            if (value == 0) return ZERO
+            return Position(value)
+        }
     }
 }
